@@ -4,6 +4,12 @@ Conference Question Vote
 # Introduction
 Conference Question Vote (CQV) is a mini full stack MEAN app using my tiny express based framework (https://github.com/dezashibi/express_micro_api) , Mongoose , Angular 4
 
+Users can ask their questions and vote for their related questions
+
+admin and moderator can view questions and delete them if question is inappropriate or mark question as answered so that the question no longer can be voted.
+
+attendees can mention their name or not and vote for a question only once.
+
 ## Installation
 installation is easy 
 
