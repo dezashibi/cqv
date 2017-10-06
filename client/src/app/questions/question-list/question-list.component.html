@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="well well bs-component">
+            <form novalidate class="form-horizontal" (ngSubmit)="createQuestion(createQuestionForm.value)" #createQuestionForm="ngForm">
+                <fieldset>
+                    <legend>Add a new question</legend>
+                    <div class="form-group">
+                        <label for="description" class="col-lg-2 control-label">Description</label>
+                        <div class="col-lg-10">
+                            <textarea class="form-control" rows="3" id="description" name="description" placeholder="Ask your question here..." ngModel #description required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-lg-2 control-label">Asked By</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Your name here..." #name ngModel>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-2">
+                            <button class="btn btn-default">Cancel</button>
+                            <button type="submit" class="btn btn-primary" [disabled]="createQuestionForm.invalid">Create</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-block btn-danger" (click)="onRefreshMe($event)">Refresh data</button>
+    <br>
+    <div class="list-group">
+        <cqv-question *ngFor="let question of questions | async" [question]="question"></cqv-question>
+    </div>
+</div>
+
+

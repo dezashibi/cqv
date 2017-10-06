@@ -1,0 +1,7 @@
+<button type="button" class="list-group-item" (click)="onVoteQuestion(question)">
+  <span class="badge">{{ question.popularity }}</span>
+  <span class="glyphicon glyphicon-question-sign"></span> {{ question.description }}
+  <span *ngIf="question.isAnswered" class="text-danger">[ANSWERED]</span>
+  <br>
+  <span class="pull-right">by {{ question.name }}</span>
+</button>

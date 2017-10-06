@@ -1,0 +1,35 @@
+<div class="col-md-10 col-md-offset-1">
+  <div>
+    <a [routerLink]="['/admin/']" class="btn btn-default"> Back</a>
+  </div>
+</div>
+
+<div class="col-md-10 col-md-offset-1">
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Question</th>
+        <th>Asked By</th>
+        <th>Popularity</th>
+        <th>Is Answered?</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+
+      <tr *ngFor="let question of questions | async">
+        <td>{{question.description}}</td>
+        <td>{{ question.name }}</td>
+        <td>{{question.popularity}} </td>
+        <td>{{question.isAnswered ? 'Yes' : 'No'}} </td>
+        <td>
+          <a [routerLink]="['/admin/questions/answered', question._id]" class="btn btn-info"> Answered</a>
+          <a [routerLink]="['/admin/questions/delete', question._id]" class="btn btn-danger"> Delete</a>
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
